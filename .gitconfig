@@ -1,0 +1,35 @@
+; .gitconfig
+;
+; See https://git-scm.com/docs/git-config
+
+[advice]
+  detachedHead = false
+[alias]
+  a = add
+  ax = add .
+  br = branch -vv
+  cm = commit
+  co = checkout
+  dt = difftool
+  new = checkout -b
+  remote = remote -vv
+  st = status
+  tag = tag --sort=-v:refname
+  # Add non-whitespace changes.
+  aw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+  # Verbose log output, defaulting to a single commit.
+  clg = "log -n 1 --date=\"format:%Y-%m-%d %H:%M\" --format=\"%nCommit:    %C(bold #CB4B16)%H%C(reset)%C(#D33682)%d%C(reset)%nDate:      %C(#B58900)%cd%C(reset)%nCommitter: %C(bold #268BD2)%an%C(reset) %C(#268BD2)<%ae>%C(reset)%nAuthor:    %C(bold #268BD2)%cn%C(reset) %C(#268BD2)<%ce>%C(reset)%nSigning:   %C(bold #268BD2)[%G?]% GS%C(reset)%n%n%w(80,8,8)%s%n%n%-b%n\""
+  # Concise log output, defaulting to 10 commits.
+  lg = "log -n 10 --date=\"format:%Y-%m-%d %H:%M\" --format=\"%C(bold #CB4B16)%h%Creset%C(bold #B58900) %ad / %cd%Creset%C(#268BD2)% an%Creset [%G?]%C(#D33682)%d%Creset%n      > %s\""
+  # More verbose log output.
+  llg = "log -n 10 --date=\"format:%Y-%m-%d %H:%M\" --format=\"%C(bold #CB4B16)%h%Creset%C(bold #B58900)% cd%Creset%C(#268BD2)% cn%Creset%C(#D33682)%d%Creset%n      > %s%n%n      > %b\""
+[blame]
+  date = short
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+[fetch]
+  prune = true
+  pruneTags = true
+[pull]
+  ff = only
