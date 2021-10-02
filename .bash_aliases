@@ -4,6 +4,9 @@
 
 # Git aliases.
 alias g='git'
+alias ga='git a'
+alias gax='git ax'
+alias gl='git lg'
 alias gs='git status'
 alias gcm='git commit'
 
