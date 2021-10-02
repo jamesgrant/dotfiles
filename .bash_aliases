@@ -6,3 +6,6 @@
 alias g='git'
 alias gs='git status'
 alias gcm='git commit'
+
+# Laravel aliases.
+alias sail='./vendor/bin/sail'
