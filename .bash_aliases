@@ -6,6 +6,7 @@
 alias g='git'
 alias ga='git a'
 alias gax='git ax'
+alias gd='git diff'
 alias gl='git lg'
 alias gs='git status'
 alias gcm='git commit'
