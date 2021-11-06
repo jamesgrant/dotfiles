@@ -2,6 +2,9 @@
 #
 # Bash aliases loaded by the Codespaces `.bashrc` file.
 
+# System aliases.
+alias ll='ls -lah'
+
 # Git aliases.
 alias g='git'
 alias ga='git a'
