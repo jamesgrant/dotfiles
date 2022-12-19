@@ -11,7 +11,9 @@
   cm = commit
   co = checkout
   dt = difftool
-  new = checkout -b
+  # Create a new git branch with no remote tracking branch.
+  # git new <new-branch> <base-branch>
+  new = switch --no-track --create
   remote = remote -vv
   st = status
   tag = tag --sort=-v:refname
