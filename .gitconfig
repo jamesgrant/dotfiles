@@ -1,12 +1,11 @@
-; .gitconfig
-;
-; See https://git-scm.com/docs/git-config
+# .gitconfig
+#
+# Git configuration. See https://git-scm.com/docs/git-config
 
 [advice]
   detachedHead = false
 [alias]
-  a = add
-  ax = add .
+  # Override `git branch` to be verbose by default.
   br = branch -vv
   cm = commit
   co = checkout
@@ -14,9 +13,12 @@
   # Create a new git branch with no remote tracking branch.
   # git new <new-branch> <base-branch>
   new = switch --no-track --create
+  # Override `git remote` to be verbose by default.
   remote = remote -vv
-  st = status
+  # Override `git tag` to sort by version number, descending.
   tag = tag --sort=-v:refname
+  # Create a new branch. Usage: `git new <branch-name> [base-branch-name]`
+  new = switch -c
   # Add non-whitespace changes.
   aw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
   # Verbose log output, defaulting to a single commit.
@@ -25,14 +27,17 @@
   lg = "log -n 10 --date=\"format:%Y-%m-%d %H:%M\" --format=\"%C(bold #CB4B16)%h%Creset%C(bold #B58900) %ad / %cd%Creset%C(#268BD2)% an%Creset [%G?]%C(#D33682)%d%Creset%n      > %s\""
   # More verbose log output.
   llg = "log -n 10 --date=\"format:%Y-%m-%d %H:%M\" --format=\"%C(bold #CB4B16)%h%Creset%C(bold #B58900)% cd%Creset%C(#268BD2)% cn%Creset%C(#D33682)%d%Creset%n      > %s%n%n      > %b\""
+  # Graphed log output.
   graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset)  %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(auto)%d%C(reset)%n''%w(76,9,9)%C(dim white)Author:    %an <%ae>%C(reset)''%n%C(dim white)Committer: %cn <%ce> [%G?]%C(reset)''%n%C(white)%s%C(reset)''%n'
 [blame]
   date = short
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.dotfiles/.gitignore
 [fetch]
   prune = true
   pruneTags = true
 [pull]
+  # Protect against unexpected merges when pulling. Prefer explict `git fetch`
+  # and `git merge`, if required.
   ff = only
