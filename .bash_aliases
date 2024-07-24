@@ -13,6 +13,3 @@ alias gd='git diff'
 alias gl='git lg'
 alias gs='git status'
 alias gcm='git commit'
-
-# Laravel aliases.
-alias sail='./vendor/bin/sail'
