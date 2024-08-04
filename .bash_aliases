@@ -13,3 +13,9 @@ alias gd='git diff'
 alias gl='git lg'
 alias gs='git status'
 alias gcm='git commit'
+
+mkcd ()
+{
+    mkdir -p -- "$1" &&
+       cd -- "$1"
+}
