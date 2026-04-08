@@ -1,0 +1,32 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[aws]
+disabled = true
+symbol   = 'AWS '
+
+[character]
+success_symbol = '[➜](bold green)'
+
+[bun]
+symbol = 'Bun '
+format = 'using [$symbol($version )]($style)'
+
+[gcloud]
+disabled = true
+symbol   = 'GCP '
+
+[nodejs]
+symbol = 'NodeJS '
+format = 'using [$symbol($version )]($style)'
+
+[php]
+symbol = 'PHP '
+format = 'using [$symbol($version )]($style)'
+
+[terraform]
+symbol = 'Terraform '
+format = 'using [$symbol$version on $workspace]($style) '
