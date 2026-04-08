@@ -5,6 +5,7 @@
 [advice]
   detachedHead = false
 [alias]
+  ax = add .
   # Override `git branch` to be verbose by default.
   br = branch -vv
   cm = commit
